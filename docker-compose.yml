@@ -1,0 +1,10 @@
+version: "3"
+services:
+  jupyter:
+    build: .
+    volumes:
+      - $PWD:/tmp/working # マウントするフォルダ
+    working_dir: /tmp/working # コンテナ内の初期ディレクトリ
+    ports:
+      - 8888:8888 #ポート設定 / 手元のポート:コンテナのポート
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
