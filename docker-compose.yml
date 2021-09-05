@@ -4,8 +4,8 @@ services:
     build: .
     container_name: jupyterlab
     volumes:
-      - /mnt/d/Work:/tmp/working/host # マウントするフォルダ
-    working_dir: /tmp/working # コンテナ内の初期ディレクトリ
+      - /mnt/d/Work:/home/host # マウントするフォルダ
+    working_dir: /home # コンテナ内の初期ディレクトリ
     ports:
       - 8888:8888 #ポート設定 / 手元のポート:コンテナのポート
     command: jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --no-browser --NotebookApp.token=''
